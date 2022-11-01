@@ -16,7 +16,13 @@ const Input = (props) => {
                     {
                         vector.map((element, column) => {
                             return (
-                                <input disabled={props.disabled} key={row.toString() + column.toString()} type={'number'} value={element} onChange={(e) => onValueChange(e.target.valueAsNumber, row, column)}></input>
+                                <input
+                                    disabled={props.disabled}
+                                    key={row.toString() + column.toString()}
+                                    type={'number'}
+                                    value={element}
+                                    onChange={(e) => onValueChange(e.target.valueAsNumber, row, column)}
+                                    onMouseDown={(e) => e.stopPropagation()}></input>
                             )
                         })
                     }
