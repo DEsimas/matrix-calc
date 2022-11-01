@@ -1,17 +1,17 @@
-const HtmlWebpackPlugin = require("html-webpack-plugin")
-const path = require("path");
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const path = require('path');
 
 module.exports = {
-    mode: "development",
-    entry: "./index.js",
+    mode: 'development',
+    entry: './index.js',
     output: {
-        path: path.resolve(__dirname, "public"),
-        filename: "main.js"
+        path: path.resolve(__dirname, 'public'),
+        filename: 'main.js'
     },
-    target: "web",
+    target: 'web',
     devServer: {
-        port: "9500",
-        static: ["./public"],
+        port: '9500',
+        static: ['./public'],
         open: true,
         hot: true,
         liveReload: true
