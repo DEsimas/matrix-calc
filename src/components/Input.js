@@ -12,7 +12,7 @@ const Input = (props) => {
                     {
                         vector.map((element, column) => {
                             return (
-                                <input key={row.toString() + column.toString()} type={'number'} value={element} onChange={(e) => onValueChange(e.target.valueAsNumber, row, column)}></input>
+                                <input disabled={props.disabled} key={row.toString() + column.toString()} type={'number'} value={element} onChange={(e) => onValueChange(e.target.valueAsNumber, row, column)}></input>
                             )
                         })
                     }
@@ -29,22 +29,22 @@ const Input = (props) => {
     return (
         <div className='input'>
             <div className='control-column'>
-                <button disabled={props.fixed || matrix[0].length == (props.min ?? 1)} onClick={() => {
+                <button disabled={props.disabled || props.fixed || matrix[0].length == (props.min ?? 1)} onClick={() => {
                     setMatrix(removeLastColumn(matrix))
                     if (props.onChange) props.onChange(matrix)
                 }}>-</button>
-                <button disabled={props.fixed || matrix[0].length >= (props.max ?? 20)} onClick={() => {
+                <button disabled={props.disabled || props.fixed || matrix[0].length >= (props.max ?? 20)} onClick={() => {
                     setMatrix(addZeroColumn(matrix))
                     if (props.onChange) props.onChange(matrix)
                 }}>+</button>
             </div>
             <div className='bottom-section'>
                 <div className='control-row'>
-                    <button disabled={props.fixed || matrix.length == (props.min ?? 1)} onClick={() => {
+                    <button disabled={props.disabled || props.fixed || matrix.length == (props.min ?? 1)} onClick={() => {
                         setMatrix(removeLastRow(matrix))
                         if (props.onChange) props.onChange(matrix)
                     }}>-</button>
-                    <button disabled={props.fixed || matrix.length >= (props.max ?? 20)} onClick={() => {
+                    <button disabled={props.disabled || props.fixed || matrix.length >= (props.max ?? 20)} onClick={() => {
                         setMatrix(addZeroRow(matrix))
                         if (props.onChange) props.onChange(matrix)
                     }}>+</button>
