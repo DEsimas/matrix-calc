@@ -11,5 +11,5 @@ export function getZeroMatrix(width, height) {
 
 export function replace(matrix, row, column, value) {
     matrix[row][column] = value
-    return matrix
+    return [...matrix]
 }
