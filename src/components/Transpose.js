@@ -18,7 +18,10 @@ const Transpose = (props) => {
             }}
             onMouseLeave={() => setIsMoving(false)}
             style={{ position: 'absolute', ...position }} className='transpose'>
-            <h2 className='transpose-header'>Transpose</h2>
+            <div className='transpose-top'>
+                <h2 className='transpose-header'>Transpose</h2>
+                <button onClick={typeof props.onClose == 'function' && props.onClose()} className='transpose-exit'>X</button>
+            </div>
             <div className='transpose-desktop'>
                 <div className='transpose-input'>
                     <Input value={matrix1} onChange={(matrix) => {

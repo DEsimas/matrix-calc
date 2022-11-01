@@ -9,6 +9,20 @@
     padding: 15px;
 }
 
+.transpose-top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.transpose-exit {
+    background-color: transparent;
+    border: none;
+    color: red;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0;
+}
+
 .transpose-desktop {
     display: flex;
     align-items: center;
