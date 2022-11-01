@@ -3,7 +3,7 @@ import { addZeroColumn, addZeroRow, getZeroMatrix, removeLastColumn, removeLastR
 import './Input.css'
 
 const Input = (props) => {
-    const [matrix, setMatrix] = useState(props.default ?? getZeroMatrix(props.width ?? 3, props.height ?? 3))
+    const [matrix, setMatrix] = useState(props.value ?? getZeroMatrix(props.width ?? 3, props.height ?? 3))
 
     function getMatrixInputs() {
         return matrix.map((vector, row) => {
@@ -12,7 +12,7 @@ const Input = (props) => {
                     {
                         vector.map((element, column) => {
                             return (
-                                <input key={row.toString() + column.toString()} type={'number'} value={element} onChange={(e) => onValueChange(e.target.valueAsNumber, row, column)}></input>
+                                <input disabled={props.disabled} key={row.toString() + column.toString()} type={'number'} value={element} onChange={(e) => onValueChange(e.target.valueAsNumber, row, column)}></input>
                             )
                         })
                     }
@@ -29,13 +29,25 @@ const Input = (props) => {
     return (
         <div className='input'>
             <div className='control-column'>
-                <button disabled={props.fixed || matrix[0].length == (props.min ?? 1)} onClick={() => setMatrix(removeLastColumn(matrix))}>-</button>
-                <button disabled={props.fixed || matrix[0].length >= (props.max ?? 20)} onClick={() => setMatrix(addZeroColumn(matrix))}>+</button>
+                <button disabled={props.fixColumns || props.disabled || props.fixed || matrix[0].length == (props.min ?? 1)} onClick={() => {
+                    setMatrix(removeLastColumn(matrix))
+                    if (props.onChange) props.onChange(matrix)
+                }}>-</button>
+                <button disabled={props.fixColumns || props.disabled || props.fixed || matrix[0].length >= (props.max ?? 20)} onClick={() => {
+                    setMatrix(addZeroColumn(matrix))
+                    if (props.onChange) props.onChange(matrix)
+                }}>+</button>
             </div>
             <div className='bottom-section'>
                 <div className='control-row'>
-                    <button disabled={props.fixed || matrix.length == (props.min ?? 1)} onClick={() => setMatrix(removeLastRow(matrix))}>-</button>
-                    <button disabled={props.fixed || matrix.length >= (props.max ?? 20)} onClick={() => setMatrix(addZeroRow(matrix))}>+</button>
+                    <button disabled={props.fixRows || props.disabled || props.fixed || matrix.length == (props.min ?? 1)} onClick={() => {
+                        setMatrix(removeLastRow(matrix))
+                        if (props.onChange) props.onChange(matrix)
+                    }}>-</button>
+                    <button disabled={props.fixRows || props.disabled || props.fixed || matrix.length >= (props.max ?? 20)} onClick={() => {
+                        setMatrix(addZeroRow(matrix))
+                        if (props.onChange) props.onChange(matrix)
+                    }}>+</button>
                 </div>
                 <div className='matrix'>
                     {getMatrixInputs()}
