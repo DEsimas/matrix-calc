@@ -29,22 +29,22 @@ const Input = (props) => {
     return (
         <div className='input'>
             <div className='control-column'>
-                <button disabled={props.disabled || props.fixed || matrix[0].length == (props.min ?? 1)} onClick={() => {
+                <button disabled={props.fixColumns || props.disabled || props.fixed || matrix[0].length == (props.min ?? 1)} onClick={() => {
                     setMatrix(removeLastColumn(matrix))
                     if (props.onChange) props.onChange(matrix)
                 }}>-</button>
-                <button disabled={props.disabled || props.fixed || matrix[0].length >= (props.max ?? 20)} onClick={() => {
+                <button disabled={props.fixColumns || props.disabled || props.fixed || matrix[0].length >= (props.max ?? 20)} onClick={() => {
                     setMatrix(addZeroColumn(matrix))
                     if (props.onChange) props.onChange(matrix)
                 }}>+</button>
             </div>
             <div className='bottom-section'>
                 <div className='control-row'>
-                    <button disabled={props.disabled || props.fixed || matrix.length == (props.min ?? 1)} onClick={() => {
+                    <button disabled={props.fixRows || props.disabled || props.fixed || matrix.length == (props.min ?? 1)} onClick={() => {
                         setMatrix(removeLastRow(matrix))
                         if (props.onChange) props.onChange(matrix)
                     }}>-</button>
-                    <button disabled={props.disabled || props.fixed || matrix.length >= (props.max ?? 20)} onClick={() => {
+                    <button disabled={props.fixRows || props.disabled || props.fixed || matrix.length >= (props.max ?? 20)} onClick={() => {
                         setMatrix(addZeroRow(matrix))
                         if (props.onChange) props.onChange(matrix)
                     }}>+</button>
