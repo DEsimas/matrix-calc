@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { addZeroColumn, addZeroRow, getZeroMatrix, removeLastColumn, removeLastRow, replace } from '../Matrix'
+import './Input.css'
 
 const Input = (props) => {
     const [matrix, setMatrix] = useState(props.default ?? getZeroMatrix(props.width ?? 3, props.height ?? 3))
