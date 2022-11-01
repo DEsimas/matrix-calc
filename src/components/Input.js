@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { getZeroMatrix, replace } from '../Matrix'
+import { addZeroColumn, getZeroMatrix, removeLastColumn, replace } from '../Matrix'
 
 const Input = (props) => {
     const [width, setWidth] = useState(props.width ?? 3)
@@ -30,8 +30,14 @@ const Input = (props) => {
 
     return (
         <div className='input'>
-            <div className='control-row'></div>
-            <div className='control-column'></div>
+            <div className='control-column'>
+                <button disabled={matrix[0].length == 1} onClick={() => setMatrix(removeLastColumn(matrix))}>-</button>
+                <button disabled={matrix[0].length >= 20} onClick={() => setMatrix(addZeroColumn(matrix))}>+</button>
+            </div>
+            <div className='control-row'>
+                <button>+</button>
+                <button>-</button>
+            </div>
             <div className='matrix'>
                 {getMatrixInputs()}
             </div>
