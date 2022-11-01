@@ -5,11 +5,9 @@ const Input = (props) => {
     const [width, setWidth] = useState(props.width ?? 3)
     const [height, setWheight] = useState(props.height ?? 3)
     const [isFixed, setIsFixed] = useState(props.fixed ? true : false)
-    const [onChange, setOnChange] = useState(props.onChange ?? function () { })
     const [matrix, setMatrix] = useState(props.default ?? getZeroMatrix(width, height))
 
     function getMatrixInputs() {
-        console.log(matrix)
         return matrix.map((vector, row) => {
             return (
                 <div key={row.toString()} className='row'>
@@ -27,6 +25,7 @@ const Input = (props) => {
 
     function onValueChange(value, row, column) {
         setMatrix(replace(matrix, row, column, value))
+        if (props.onChange) props.onChange(matrix)
     }
 
     return (
