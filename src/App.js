@@ -3,12 +3,8 @@ import Input from './components/Input'
 import './normalize.css'
 
 const App = () => {
-    function m(matrix) {
-        console.log(matrix)
-    }
-
     return (
-        <Input onChange={m} />
+        <Input />
     )
 }
 
