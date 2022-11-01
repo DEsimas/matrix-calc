@@ -1,9 +1,13 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { addZeroColumn, addZeroRow, getZeroMatrix, removeLastColumn, removeLastRow, replace } from '../Matrix'
 import './Input.css'
 
 const Input = (props) => {
     const [matrix, setMatrix] = useState(props.value ?? getZeroMatrix(props.width ?? 3, props.height ?? 3))
+
+    useEffect(() => {
+        setMatrix(props.value ?? getZeroMatrix(props.width ?? 3, props.height ?? 3))
+    })
 
     function getMatrixInputs() {
         return matrix.map((vector, row) => {
