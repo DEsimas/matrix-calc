@@ -1,0 +1,28 @@
+.transpose {
+    background-color: darkgray;
+    display: inline-block;
+    border: 2px black solid;
+    border-radius: 15px;
+    padding: 15px;
+}
+
+.transpose-desktop {
+    display: flex;
+    align-items: center;
+}
+
+.transpose span {
+    font-size: 32px;
+    margin: 0 15px;
+}
+
+.transpose-header {
+    font-size: 32px;
+    margin: 0;
+    margin-bottom: 5px;
+}
+
+.transpose-input {
+    display: flex;
+    align-items: flex-start;
+}
