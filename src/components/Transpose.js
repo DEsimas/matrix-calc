@@ -20,7 +20,7 @@ const Transpose = (props) => {
             style={{ position: 'absolute', ...position }} className='transpose'>
             <div className='transpose-top'>
                 <h2 className='transpose-header'>Transpose</h2>
-                <button onClick={typeof props.onClose == 'function' && props.onClose()} className='transpose-exit'>X</button>
+                <button onClick={() => { typeof props.onClose == 'function' && props.onClose() }} className='transpose-exit'>X</button>
             </div>
             <div className='transpose-desktop'>
                 <div className='transpose-input'>
