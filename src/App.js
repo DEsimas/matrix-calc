@@ -7,7 +7,7 @@ const App = () => {
     }
 
     return (
-        <Input onChange={m} />
+        <Input />
     )
 }
 

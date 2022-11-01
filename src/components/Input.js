@@ -2,10 +2,7 @@ import React, { useState } from 'react'
 import { addZeroColumn, addZeroRow, getZeroMatrix, removeLastColumn, removeLastRow, replace } from '../Matrix'
 
 const Input = (props) => {
-    const [width, setWidth] = useState(props.width ?? 3)
-    const [height, setWheight] = useState(props.height ?? 3)
-    const [isFixed, setIsFixed] = useState(props.fixed ? true : false)
-    const [matrix, setMatrix] = useState(props.default ?? getZeroMatrix(width, height))
+    const [matrix, setMatrix] = useState(props.default ?? getZeroMatrix(props.width ?? 3, props.height ?? 3))
 
     function getMatrixInputs() {
         return matrix.map((vector, row) => {
@@ -31,12 +28,12 @@ const Input = (props) => {
     return (
         <div className='input'>
             <div className='control-column'>
-                <button disabled={matrix[0].length == 1} onClick={() => setMatrix(removeLastColumn(matrix))}>-</button>
-                <button disabled={matrix[0].length >= 20} onClick={() => setMatrix(addZeroColumn(matrix))}>+</button>
+                <button disabled={props.fixed || matrix[0].length == 1} onClick={() => setMatrix(removeLastColumn(matrix))}>-</button>
+                <button disabled={props.fixed || matrix[0].length >= 20} onClick={() => setMatrix(addZeroColumn(matrix))}>+</button>
             </div>
             <div className='control-row'>
-                <button disabled={matrix.length >= 20} onClick={() => setMatrix(addZeroRow(matrix))}>+</button>
-                <button disabled={matrix.length == 1} onClick={() => setMatrix(removeLastRow(matrix))}>-</button>
+                <button disabled={props.fixed || matrix.length >= 20} onClick={() => setMatrix(addZeroRow(matrix))}>+</button>
+                <button disabled={props.fixed || matrix.length == 1} onClick={() => setMatrix(removeLastRow(matrix))}>-</button>
             </div>
             <div className='matrix'>
                 {getMatrixInputs()}
