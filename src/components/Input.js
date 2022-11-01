@@ -3,7 +3,7 @@ import { addZeroColumn, addZeroRow, getZeroMatrix, removeLastColumn, removeLastR
 import './Input.css'
 
 const Input = (props) => {
-    const [matrix, setMatrix] = useState(props.default ?? getZeroMatrix(props.width ?? 3, props.height ?? 3))
+    const [matrix, setMatrix] = useState(props.value ?? getZeroMatrix(props.width ?? 3, props.height ?? 3))
 
     function getMatrixInputs() {
         return matrix.map((vector, row) => {
