@@ -1,4 +1,7 @@
 .transpose {
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     background-color: darkgray;
     display: inline-block;
     border: 2px black solid;
