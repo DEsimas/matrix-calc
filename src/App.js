@@ -1,10 +1,14 @@
 import React from 'react'
+import Input from './components/Input'
+import './normalize.css'
 
 const App = () => {
+    function m(matrix) {
+        console.log(matrix)
+    }
+
     return (
-        <h1>
-            Uwu
-        </h1>
+        <Input />
     )
 }
 
