@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Transpose from './Transpose'
+import Multiplication from './Multiplication'
 import './Table.css'
 
 const Table = (props) => {
@@ -23,6 +24,7 @@ const Table = (props) => {
             </div>
             <div className={'list ' + (collapsed ? 'hidden' : '')}>
                 <button onClick={() => props.addElement((<Transpose />))}>Transpose</button>
+                <button onClick={() => props.addElement((<Multiplication />))}>Multiplication</button>
             </div>
         </div>
     )
