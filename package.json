@@ -35,7 +35,6 @@
   "dependencies": {
     "normalize.css": "^8.0.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "uuidv4": "^6.2.13"
+    "react-dom": "^18.2.0"
   }
 }
