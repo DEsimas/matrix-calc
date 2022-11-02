@@ -13,7 +13,13 @@ const Table = (props) => {
         <div className='table'>
             <div onClick={() => toggleCollapsed()} className='table-header'>
                 <h2>Operations</h2>
-                <span className='table-header-arrow'>{collapsed ? '[open]' : '[close]'}</span>
+                <img
+                    style={{
+                        transform: collapsed ? 'rotate(180deg)' : 'rotate(90deg)',
+                        transition: 'transform 150ms ease',
+                    }}
+                    width={35} src='https://cdn-icons-png.flaticon.com/512/271/271228.png'
+                    className='table-header-arrow' />
             </div>
             <div className={'list ' + (collapsed ? 'hidden' : '')}>
                 <button onClick={() => props.addElement((<Transpose />))}>Transpose</button>
