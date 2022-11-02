@@ -1,10 +1,14 @@
 import React from 'react'
-import Input from './components/Input'
+import Transpose from './components/Transpose'
 import './normalize.css'
+import './App.css'
 
 const App = () => {
     return (
-        <Input />
+        <>
+            <Transpose />
+            <Transpose />
+        </>
     )
 }
 
