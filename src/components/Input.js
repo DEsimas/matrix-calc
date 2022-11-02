@@ -21,7 +21,7 @@ const Input = (props) => {
                                     key={row.toString() + column.toString()}
                                     type={'number'}
                                     value={element}
-                                    onChange={(e) => onValueChange(e.target.valueAsNumber, row, column)}
+                                    onChange={(e) => onValueChange(e.target.value == '' ? '' : e.target.valueAsNumber, row, column)}
                                     onMouseDown={(e) => e.stopPropagation()}></input>
                             )
                         })
