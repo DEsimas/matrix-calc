@@ -5,7 +5,10 @@ import './App.css'
 
 const App = () => {
     return (
-        <Transpose />
+        <>
+            <Transpose />
+            <Transpose />
+        </>
     )
 }
 

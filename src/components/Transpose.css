@@ -3,10 +3,10 @@
     -ms-user-select: none;
     user-select: none;
     background-color: darkgray;
-    display: inline-block;
     border: 2px black solid;
     border-radius: 15px;
     padding: 15px;
+    position: absolute;
 }
 
 .transpose-top {
