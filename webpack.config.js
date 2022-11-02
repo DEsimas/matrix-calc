@@ -19,7 +19,10 @@ module.exports = {
     resolve: {
         extensions: ['.js', '.jsx', '.json']
     },
-    plugins: [new HtmlWebpackPlugin({ template: './index.html' })],
+    plugins: [new HtmlWebpackPlugin({
+        favicon: './src/favicon.ico',
+        template: './index.html'
+    })],
     module: {
         rules: [
             {
