@@ -6,18 +6,9 @@ import './Transpose.css'
 const Transpose = (props) => {
     const [matrix1, setMatrix1] = useState(getZeroMatrix(3, 3))
     const [matrix2, setMatrix2] = useState(getZeroMatrix(3, 3))
-    const [isMoving, setIsMoving] = useState(false)
-    const [position, setPosition] = useState({ top: props.top ?? 0, left: props.left ?? 0 })
 
     return (
-        <div onMouseDown={(e) => { setIsMoving(true) }} onMouseUp={() => { setIsMoving(false) }}
-            onMouseMove={(e) => {
-                if (isMoving) {
-                    setPosition({ top: position.top + e.movementY, left: position.left + e.movementX })
-                }
-            }}
-            onMouseLeave={() => setIsMoving(false)}
-            style={{ position: 'absolute', ...position }} className='transpose'>
+        <div className='transpose movable'>
             <div className='transpose-top'>
                 <h2 className='transpose-header'>Transpose</h2>
                 <button onClick={() => { typeof props.onClose == 'function' && props.onClose() }} className='transpose-exit'>X</button>
