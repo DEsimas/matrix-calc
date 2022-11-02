@@ -12,7 +12,7 @@ const Transpose = (props) => {
 
     return (
         <Draggable>
-            <div id={id} className='transpose'>
+            <div style={{ top: props.top ?? 0, left: props.left ?? 0 }} id={id} className='transpose'>
                 <div className='transpose-top'>
                     <h2 className='transpose-header'>Transpose</h2>
                     <button onClick={() => { document.getElementById(id).classList.add('hidden') }} className='transpose-exit'>X</button>
