@@ -13,9 +13,9 @@ const Multiplication = (props) => {
     return (
         <Draggable>
             <div style={{ top: props.top ?? 0, left: props.left ?? 0 }} id={id} className='multiplication'>
-                <div className='multiplication-top'>
-                    <h2 className='multiplication-header'>Multiplication</h2>
-                    <button onClick={() => { document.getElementById(id).classList.add('hidden') }} className='multiplication-exit'>X</button>
+                <div className='top'>
+                    <h2 className='header'>Multiplication</h2>
+                    <button onClick={() => { document.getElementById(id).classList.add('hidden') }} className='exit'>X</button>
                 </div>
                 <div className='multiplication-desktop'>
                     <Input value={matrix1} onChange={(matrix) => {
