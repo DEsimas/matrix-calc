@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Transpose from './Transpose'
+import './Table.css'
 
 const Table = (props) => {
     const [collapsed, setCollapsed] = useState(false)
@@ -12,7 +13,7 @@ const Table = (props) => {
         <div className='table'>
             <div onClick={() => toggleCollapsed()} className='table-header'>
                 <h2>Operations</h2>
-                <span>{collapsed ? '[open]' : '[close]'}</span>
+                <span className='table-header-arrow'>{collapsed ? '[open]' : '[close]'}</span>
             </div>
             <div className={'list ' + (collapsed ? 'hidden' : '')}>
                 <button onClick={() => props.addElement((<Transpose />))}>Transpose</button>

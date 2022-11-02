@@ -1,0 +1,55 @@
+.table {
+    background-color: darkgray;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    font-size: 26px;
+    width: 350px;
+    border: 2px black solid;
+    border-radius: 15px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+.table-header {
+    cursor: pointer;
+    transition: background-color 1s;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.table-header:hover {
+    background-color: rgb(129, 129, 129);
+}
+
+.table-header h2 {
+    margin: 10px;
+}
+
+.table-header-arrow {
+    margin: 10px;
+}
+
+.list {
+    margin-bottom: 5px;
+}
+
+.list button {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    padding: 10px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.list button:hover {
+    background-color: rgb(129, 129, 129);
+    transition: background-color 0.5s;
+}
