@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import { addZeroColumn, addZeroRow, getZeroMatrix, removeLastColumn, removeLastRow, replace } from './../Matrix'
 
 import './Input.css'
 
 const Input = (props) => {
-    const [matrix, setMatrix] = useState(props.value ?? getZeroMatrix(3, 3))
+    let matrix = props.value ?? getZeroMatrix(3, 3)
 
     function getMatrixInputs() {
         return matrix.map((vector, row) => {
@@ -31,34 +31,34 @@ const Input = (props) => {
     }
 
     function onValueChange(value, row, column) {
-        setMatrix(replace(matrix, row, column, value))
+        matrix = replace(matrix, row, column, value)
         if (props.onChange) props.onChange(matrix)
     }
 
     function decreaseColumns(e) {
         e.stopPropagation()
-        setMatrix(removeLastColumn(matrix))
+        matrix = removeLastColumn(matrix)
         if (typeof props.onChange == 'function') props.onChange(matrix)
         if (typeof props.onDecreaseColumns == 'function') props.onDecreaseColumns(matrix)
     }
 
     function increaseColumns(e) {
         e.stopPropagation()
-        setMatrix(addZeroColumn(matrix))
+        matrix = addZeroColumn(matrix)
         if (typeof props.onChange == 'function') props.onChange(matrix)
         if (typeof props.onIncreaseColumns == 'function') props.onIncreaseColumns(matrix)
     }
 
     function decreaseRows(e) {
         e.stopPropagation()
-        setMatrix(removeLastRow(matrix))
+        matrix = removeLastRow(matrix)
         if (typeof props.onChange == 'function') props.onChange(matrix)
         if (typeof props.onDecreaseRows == 'function') props.onDecreaseRows(matrix)
     }
 
     function increaseRows(e) {
         e.stopPropagation()
-        setMatrix(addZeroRow(matrix))
+        matrix = addZeroRow(matrix)
         if (typeof props.onChange == 'function') props.onChange(matrix)
         if (typeof props.onIncreaseRows == 'function') props.onIncreaseRows(matrix)
     }

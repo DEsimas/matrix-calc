@@ -14,7 +14,7 @@ const Multiplication = (props) => {
     const id = v1()
 
     useEffect(() => {
-        console.log(matrix2)
+        setResult(multiply(matrix1, matrix2))
     }, [matrix1, matrix2])
 
     return (
@@ -26,20 +26,24 @@ const Multiplication = (props) => {
                 </div>
                 <div className='multiplication-desktop'>
                     <Input
-                        // onDecreaseRows={() => setMatrix2(removeLastColumn(matrix2))}
-                        // onIncreaseRows={() => setMatrix2(addZeroColumn(matrix2))}
-                        fixRows={true}
-                        onDecreaseColumns={() => setMatrix2([[1], [2]])}
-                        onIncreaseColumns={() => setMatrix2([[3], [4]])}
+                        onDecreaseRows={() => setMatrix2(removeLastColumn(matrix2))}
+                        onIncreaseRows={() => setMatrix2(addZeroColumn(matrix2))}
+                        onDecreaseColumns={() => setMatrix2(removeLastRow(matrix2))}
+                        onIncreaseColumns={() => setMatrix2(addZeroRow(matrix2))}
                         value={matrix1}
                         onChange={(matrix) => setMatrix1(matrix)} />
                     <span>×</span>
                     <Input
-                        fixed={true}
+                        onDecreaseRows={() => setMatrix1(removeLastColumn(matrix1))}
+                        onIncreaseRows={() => setMatrix1(addZeroColumn(matrix1))}
+                        onDecreaseColumns={() => setMatrix1(removeLastRow(matrix1))}
+                        onIncreaseColumns={() => setMatrix1(addZeroRow(matrix1))}
                         value={matrix2}
                         onChange={(matrix) => setMatrix2(matrix)} />
                     <span>=</span>
-                    {/* <Input value={result} disabled={true} /> */}
+                    <Input
+                        value={result}
+                        disabled={true} />
                 </div>
             </div>
         </Draggable>
