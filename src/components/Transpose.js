@@ -12,10 +12,13 @@ const Transpose = (props) => {
 
     return (
         <Draggable>
-            <div style={{ top: props.top ?? 0, left: props.left ?? 0 }} id={id} className='transpose'>
-                <div className='transpose-top'>
-                    <h2 className='transpose-header'>Transpose</h2>
-                    <button onClick={() => { document.getElementById(id).classList.add('hidden') }} className='transpose-exit'>X</button>
+            <div
+                style={{ top: props.top ?? 0, left: props.left ?? 0 }}
+                id={id}
+                className='transpose'>
+                <div className='top'>
+                    <h2 className='header'>Transpose</h2>
+                    <button onClick={() => { document.getElementById(id).classList.add('hidden') }} className='exit'>X</button>
                 </div>
                 <div className='transpose-desktop'>
                     <div className='transpose-input'>

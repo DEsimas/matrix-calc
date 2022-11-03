@@ -1,3 +1,23 @@
 .hidden {
     display: none;
 }
+
+.header {
+    font-size: 32px;
+    margin: 0;
+    margin-bottom: 5px;
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.exit {
+    background-color: transparent;
+    border: none;
+    color: red;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0;
+}

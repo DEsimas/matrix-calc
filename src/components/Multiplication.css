@@ -1,4 +1,4 @@
-.transpose {
+.multiplication {
     -webkit-user-select: none;
     -ms-user-select: none;
     user-select: none;
@@ -9,17 +9,12 @@
     position: absolute;
 }
 
-.transpose-desktop {
+.multiplication-desktop {
     display: flex;
     align-items: center;
 }
 
-.transpose span {
-    font-size: 32px;
-    margin: 0 15px;
-}
-
-.transpose-input {
-    display: flex;
-    align-items: flex-start;
+.multiplication-desktop span {
+    font-size: 64px;
+    margin: 5px;
 }
