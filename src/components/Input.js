@@ -1,5 +1,7 @@
-import React, { useEffect, useState } from 'react'
-import { addZeroColumn, addZeroRow, getZeroMatrix, removeLastColumn, removeLastRow, replace } from '../Matrix'
+import React, { useState } from 'react'
+
+import { addZeroColumn, addZeroRow, getZeroMatrix, removeLastColumn, removeLastRow, replace } from './../Matrix'
+
 import './Input.css'
 
 const Input = (props) => {
@@ -8,17 +10,18 @@ const Input = (props) => {
     function getMatrixInputs() {
         return matrix.map((vector, row) => {
             return (
-                <div key={row.toString()} className='row'>
+                <div key={row.toString()} className='matrix-row'>
                     {
                         vector.map((element, column) => {
                             return (
                                 <input
+                                    className='matrix-row-input'
                                     disabled={props.disabled}
                                     key={row.toString() + column.toString()}
                                     type={'number'}
                                     value={element}
                                     onChange={(e) => onValueChange(e.target.value == '' ? '' : e.target.valueAsNumber, row, column)}
-                                    onMouseDown={(e) => e.stopPropagation()}></input>
+                                    onMouseDown={(e) => e.stopPropagation()} />
                             )
                         })
                     }
@@ -61,25 +64,29 @@ const Input = (props) => {
     }
 
     return (
-        <div className='input'>
-            <div className='control-column'>
+        <div className='matrix-input'>
+            <div className='matrix-input-control-column'>
                 <button
+                    className='matrix-input-control-column-button'
                     disabled={props.fixColumns || props.disabled || props.fixed || matrix[0].length == (props.min ?? 1)}
                     onClick={decreaseColumns}>-</button>
                 <button
+                    className='matrix-input-control-column-button'
                     disabled={props.fixColumns || props.disabled || props.fixed || matrix[0].length >= (props.max ?? 15)}
                     onClick={increaseColumns}>+</button>
             </div>
-            <div className='bottom-section'>
-                <div className='control-row'>
+            <div className='matrix-input-bottom-section'>
+                <div className='matrix-input-bottom-section-control-row'>
                     <button
+                        className='matrix-input-bottom-section-control-row-button'
                         disabled={props.fixRows || props.disabled || props.fixed || matrix.length == (props.min ?? 1)}
                         onClick={decreaseRows}>-</button>
                     <button
+                        className='matrix-input-bottom-section-control-row-button'
                         disabled={props.fixRows || props.disabled || props.fixed || matrix.length >= (props.max ?? 15)}
                         onClick={increaseRows}>+</button>
                 </div>
-                <div className='matrix'>
+                <div className='matrix-input-bottom-section-matrix'>
                     {getMatrixInputs()}
                 </div>
             </div>

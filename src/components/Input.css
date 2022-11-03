@@ -1,4 +1,4 @@
-.input {
+.matrix-input {
     background-color: rgb(149, 149, 149);
     display: inline-block;
     padding: 15px;
@@ -6,13 +6,19 @@
     border-radius: 15px;
 }
 
-.input button {
+.matrix-input-control-column-button {
     width: 25px;
     height: 25px;
     text-align: center;
 }
 
-.input input {
+.matrix-input-bottom-section-control-row-button {
+    width: 25px;
+    height: 25px;
+    text-align: center;
+}
+
+.matrix-row-input {
     font-size: 16px;
     width: 30px;
     height: 30px;
@@ -32,21 +38,21 @@ input[type=number] {
     -moz-appearance: textfield;
 }
 
-.bottom-section {
+.matrix-input-bottom-section {
     display: flex;
 }
 
-.control-column {
+.matrix-input-control-column {
     margin-left: 30px;
     margin-bottom: 5px;
 }
 
-.control-row {
+.matrix-input-bottom-section-control-row {
     margin-right: 5px;
     display: flex;
     flex-direction: column;
 }
 
-.matrix {
+.matrix-input-bottom-section-matrix {
     display: inline;
 }
