@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import Draggable from 'react-draggable'
-import { getZeroMatrix, multiply } from '../Matrix'
-import Input from './Input'
 import { v1 } from 'uuid'
+
+import { addZeroColumn, addZeroRow, getZeroMatrix, multiply, removeLastColumn, removeLastRow } from './../Matrix'
+import Input from './Input'
+
 import './Multiplication.css'
 
 const Multiplication = (props) => {
@@ -12,7 +14,7 @@ const Multiplication = (props) => {
     const id = v1()
 
     useEffect(() => {
-        setResult(multiply(matrix1, matrix2))
+        console.log(matrix2)
     }, [matrix1, matrix2])
 
     return (
@@ -23,15 +25,21 @@ const Multiplication = (props) => {
                     <button onClick={() => { document.getElementById(id).classList.add('hidden') }} className='exit'>X</button>
                 </div>
                 <div className='multiplication-desktop'>
-                    <Input value={matrix1} onChange={(matrix) => {
-                        setMatrix1(matrix)
-                    }} />
+                    <Input
+                        // onDecreaseRows={() => setMatrix2(removeLastColumn(matrix2))}
+                        // onIncreaseRows={() => setMatrix2(addZeroColumn(matrix2))}
+                        fixRows={true}
+                        onDecreaseColumns={() => setMatrix2([[1], [2]])}
+                        onIncreaseColumns={() => setMatrix2([[3], [4]])}
+                        value={matrix1}
+                        onChange={(matrix) => setMatrix1(matrix)} />
                     <span>×</span>
-                    <Input width={matrix1.length} height={matrix1[0].length} fixed={true} value={matrix2} onChange={(matrix) => {
-                        setMatrix2(matrix)
-                    }} />
+                    <Input
+                        fixed={true}
+                        value={matrix2}
+                        onChange={(matrix) => setMatrix2(matrix)} />
                     <span>=</span>
-                    <Input value={result} disabled={true} />
+                    {/* <Input value={result} disabled={true} /> */}
                 </div>
             </div>
         </Draggable>

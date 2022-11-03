@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Transpose from './Transpose'
 import Multiplication from './Multiplication'
 import './Table.css'
+import { v1 } from 'uuid'
 
 const Table = (props) => {
     const [collapsed, setCollapsed] = useState(false)
@@ -23,8 +24,8 @@ const Table = (props) => {
                     className='table-header-arrow' />
             </div>
             <div className={'list ' + (collapsed ? 'hidden' : '')}>
-                <button onClick={() => props.addElement((<Transpose />))}>Transpose</button>
-                <button onClick={() => props.addElement((<Multiplication />))}>Multiplication</button>
+                <button onClick={() => props.addElement((<Transpose key={v1()} />))}>Transpose</button>
+                <button onClick={() => props.addElement((<Multiplication key={v1()} />))}>Multiplication</button>
             </div>
         </div>
     )
