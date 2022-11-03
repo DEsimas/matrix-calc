@@ -3,11 +3,7 @@ import { addZeroColumn, addZeroRow, getZeroMatrix, removeLastColumn, removeLastR
 import './Input.css'
 
 const Input = (props) => {
-    const [matrix, setMatrix] = useState(props.value ?? getZeroMatrix(props.width ?? 3, props.height ?? 3))
-
-    useEffect(() => {
-        setMatrix(props.value ?? getZeroMatrix(props.width ?? 3, props.height ?? 3))
-    })
+    const [matrix, setMatrix] = useState(props.value ?? getZeroMatrix(3, 3))
 
     function getMatrixInputs() {
         return matrix.map((vector, row) => {
@@ -36,32 +32,52 @@ const Input = (props) => {
         if (props.onChange) props.onChange(matrix)
     }
 
+    function decreaseColumns(e) {
+        e.stopPropagation()
+        setMatrix(removeLastColumn(matrix))
+        if (typeof props.onChange == 'function') props.onChange(matrix)
+        if (typeof props.onDecreaseColumns == 'function') props.onDecreaseColumns(matrix)
+    }
+
+    function increaseColumns(e) {
+        e.stopPropagation()
+        setMatrix(addZeroColumn(matrix))
+        if (typeof props.onChange == 'function') props.onChange(matrix)
+        if (typeof props.onIncreaseColumns == 'function') props.onIncreaseColumns(matrix)
+    }
+
+    function decreaseRows(e) {
+        e.stopPropagation()
+        setMatrix(removeLastRow(matrix))
+        if (typeof props.onChange == 'function') props.onChange(matrix)
+        if (typeof props.onIncreaseColumns == 'function') props.onDecreaseRows(matrix)
+    }
+
+    function increaseRows(e) {
+        e.stopPropagation()
+        setMatrix(addZeroRow(matrix))
+        if (typeof props.onChange == 'function') props.onChange(matrix)
+        if (typeof props.onIncreaseColumns == 'function') props.onIncreaseRows(matrix)
+    }
+
     return (
         <div className='input'>
             <div className='control-column'>
-                <button disabled={props.fixColumns || props.disabled || props.fixed || matrix[0].length == (props.min ?? 1)} onClick={(e) => {
-                    e.stopPropagation()
-                    setMatrix(removeLastColumn(matrix))
-                    if (props.onChange) props.onChange(matrix)
-                }}>-</button>
-                <button disabled={props.fixColumns || props.disabled || props.fixed || matrix[0].length >= (props.max ?? 20)} onClick={(e) => {
-                    e.stopPropagation()
-                    setMatrix(addZeroColumn(matrix))
-                    if (props.onChange) props.onChange(matrix)
-                }}>+</button>
+                <button
+                    disabled={props.fixColumns || props.disabled || props.fixed || matrix[0].length == (props.min ?? 1)}
+                    onClick={decreaseColumns}>-</button>
+                <button
+                    disabled={props.fixColumns || props.disabled || props.fixed || matrix[0].length >= (props.max ?? 15)}
+                    onClick={increaseColumns}>+</button>
             </div>
             <div className='bottom-section'>
                 <div className='control-row'>
-                    <button disabled={props.fixRows || props.disabled || props.fixed || matrix.length == (props.min ?? 1)} onClick={(e) => {
-                        e.stopPropagation()
-                        setMatrix(removeLastRow(matrix))
-                        if (props.onChange) props.onChange(matrix)
-                    }}>-</button>
-                    <button disabled={props.fixRows || props.disabled || props.fixed || matrix.length >= (props.max ?? 20)} onClick={(e) => {
-                        e.stopPropagation()
-                        setMatrix(addZeroRow(matrix))
-                        if (props.onChange) props.onChange(matrix)
-                    }}>+</button>
+                    <button
+                        disabled={props.fixRows || props.disabled || props.fixed || matrix.length == (props.min ?? 1)}
+                        onClick={decreaseRows}>-</button>
+                    <button
+                        disabled={props.fixRows || props.disabled || props.fixed || matrix.length >= (props.max ?? 15)}
+                        onClick={increaseRows}>+</button>
                 </div>
                 <div className='matrix'>
                     {getMatrixInputs()}
