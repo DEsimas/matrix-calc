@@ -53,14 +53,14 @@ const Input = (props) => {
         e.stopPropagation()
         setMatrix(removeLastRow(matrix))
         if (typeof props.onChange == 'function') props.onChange(matrix)
-        if (typeof props.onIncreaseColumns == 'function') props.onDecreaseRows(matrix)
+        if (typeof props.onDecreaseRows == 'function') props.onDecreaseRows(matrix)
     }
 
     function increaseRows(e) {
         e.stopPropagation()
         setMatrix(addZeroRow(matrix))
         if (typeof props.onChange == 'function') props.onChange(matrix)
-        if (typeof props.onIncreaseColumns == 'function') props.onIncreaseRows(matrix)
+        if (typeof props.onIncreaseRows == 'function') props.onIncreaseRows(matrix)
     }
 
     return (
