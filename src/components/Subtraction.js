@@ -21,7 +21,15 @@ const Subtraction = (props) => {
         <Draggable>
             <div style={{ top: props.top ?? 0, left: props.left ?? 0 }} id={id} className='subtraction'>
                 <div className='top'>
-                    <h2 className='header'>Subtraction</h2>
+                    <div className='top-block'>
+                        <h2 className='header'>Subtraction</h2>
+                        <img src='https://cdn-icons-png.flaticon.com/512/3031/3031715.png' alt='replace' onClick={(e) => {
+                            e.stopPropagation()
+                            const m1 = matrix1
+                            setMatrix1(matrix2)
+                            setMatrix2(m1)
+                        }} />
+                    </div>
                     <button onClick={() => { document.getElementById(id).classList.add('hidden') }} className='exit'>X</button>
                 </div>
                 <div className='subtraction-desktop'>
@@ -46,7 +54,7 @@ const Subtraction = (props) => {
                         disabled={true} />
                 </div>
             </div>
-        </Draggable>
+        </Draggable >
     )
 }
 

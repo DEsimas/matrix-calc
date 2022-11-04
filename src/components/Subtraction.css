@@ -18,3 +18,23 @@
     font-size: 64px;
     margin: 5px;
 }
+
+.top-block {
+    display: flex;
+    align-items: center;
+}
+
+.top-block img {
+    margin-left: 15px;
+    padding: 0px;
+    width: 25px;
+    height: 25px;
+    padding: 3px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.top-block img:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+    transition: background-color 1s;
+}
