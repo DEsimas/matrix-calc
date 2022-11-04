@@ -1,5 +1,11 @@
-import React from 'react'
-import { addZeroColumn, addZeroRow, removeLastColumn, removeLastRow } from '../Matrix'
+import React, { useState, useEffect } from 'react'
+import { v1 } from 'uuid'
+import Draggable from 'react-draggable'
+
+import { add, getZeroMatrix, addZeroColumn, addZeroRow, removeLastColumn, removeLastRow } from '../Matrix'
+import Input from './Input'
+
+import './Addition.css'
 
 const Addition = (props) => {
     const [matrix1, setMatrix1] = useState(getZeroMatrix(3, 3))
@@ -15,7 +21,7 @@ const Addition = (props) => {
         <Draggable>
             <div style={{ top: props.top ?? 0, left: props.left ?? 0 }} id={id} className='addition'>
                 <div className='top'>
-                    <h2 className='header'>Multiplication</h2>
+                    <h2 className='header'>Addition</h2>
                     <button onClick={() => { document.getElementById(id).classList.add('hidden') }} className='exit'>X</button>
                 </div>
                 <div className='addition-desktop'>
@@ -26,7 +32,7 @@ const Addition = (props) => {
                         onIncreaseColumns={() => setMatrix2(addZeroColumn(matrix2))}
                         value={matrix1}
                         onChange={(matrix) => setMatrix1(matrix)} />
-                    <span>×</span>
+                    <span>+</span>
                     <Input
                         onDecreaseRows={() => setMatrix1(removeLastRow(matrix1))}
                         onIncreaseRows={() => setMatrix1(addZeroRow(matrix1))}
@@ -44,4 +50,4 @@ const Addition = (props) => {
     )
 }
 
-export default (Addition)
+export default Addition
