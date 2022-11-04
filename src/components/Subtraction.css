@@ -1,0 +1,20 @@
+.subtraction {
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: darkgray;
+    border: 2px black solid;
+    border-radius: 15px;
+    padding: 15px;
+    position: absolute;
+}
+
+.subtraction-desktop {
+    display: flex;
+    align-items: center;
+}
+
+.subtraction-desktop span {
+    font-size: 64px;
+    margin: 5px;
+}

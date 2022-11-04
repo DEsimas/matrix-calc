@@ -19,12 +19,12 @@ const Subtraction = (props) => {
 
     return (
         <Draggable>
-            <div style={{ top: props.top ?? 0, left: props.left ?? 0 }} id={id} className='Subtraction'>
+            <div style={{ top: props.top ?? 0, left: props.left ?? 0 }} id={id} className='subtraction'>
                 <div className='top'>
                     <h2 className='header'>Subtraction</h2>
                     <button onClick={() => { document.getElementById(id).classList.add('hidden') }} className='exit'>X</button>
                 </div>
-                <div className='Subtraction-desktop'>
+                <div className='subtraction-desktop'>
                     <Input
                         onDecreaseRows={() => setMatrix2(removeLastRow(matrix2))}
                         onIncreaseRows={() => setMatrix2(addZeroRow(matrix2))}
@@ -32,7 +32,7 @@ const Subtraction = (props) => {
                         onIncreaseColumns={() => setMatrix2(addZeroColumn(matrix2))}
                         value={matrix1}
                         onChange={(matrix) => setMatrix1(matrix)} />
-                    <span>+</span>
+                    <span>-</span>
                     <Input
                         onDecreaseRows={() => setMatrix1(removeLastRow(matrix1))}
                         onIncreaseRows={() => setMatrix1(addZeroRow(matrix1))}
