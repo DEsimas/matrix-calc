@@ -74,3 +74,7 @@ export function multiply(a, b) {
     }
     return product;
 }
+
+export function add(m1, m2) {
+    return getZeroMatrix(3, 3)
+}
