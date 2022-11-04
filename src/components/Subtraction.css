@@ -1,0 +1,40 @@
+.subtraction {
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: darkgray;
+    border: 2px black solid;
+    border-radius: 15px;
+    padding: 15px;
+    position: absolute;
+}
+
+.subtraction-desktop {
+    display: flex;
+    align-items: center;
+}
+
+.subtraction-desktop span {
+    font-size: 64px;
+    margin: 5px;
+}
+
+.top-block {
+    display: flex;
+    align-items: center;
+}
+
+.top-block img {
+    margin-left: 15px;
+    padding: 0px;
+    width: 25px;
+    height: 25px;
+    padding: 3px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.top-block img:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+    transition: background-color 1s;
+}
