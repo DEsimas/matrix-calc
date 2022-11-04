@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react'
 import { v1 } from 'uuid'
 import Draggable from 'react-draggable'
+import React, { useState, useEffect } from 'react'
 
-import { add, getZeroMatrix, addZeroColumn, addZeroRow, removeLastColumn, removeLastRow } from '../Matrix'
 import Input from './Input'
+import { subtract, getZeroMatrix, addZeroColumn, addZeroRow, removeLastColumn, removeLastRow } from './../Matrix'
 
 import './Subtraction.css'
 
