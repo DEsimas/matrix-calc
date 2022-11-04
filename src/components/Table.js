@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
 import { v1 } from 'uuid'
+import React, { useState } from 'react'
 
 import Addition from './Addition'
 import Transpose from './Transpose'
+import Subtraction from './Subtraction'
 import Multiplication from './Multiplication'
 
 import './Table.css'
@@ -30,6 +31,7 @@ const Table = (props) => {
                 <button onClick={() => props.addElement((<Transpose key={v1()} />))}>Transpose</button>
                 <button onClick={() => props.addElement((<Multiplication key={v1()} />))}>Multiplication</button>
                 <button onClick={() => props.addElement((<Addition key={v1()} />))}>Addition</button>
+                <button onClick={() => props.addElement((<Subtraction key={v1()} />))}>Subtraction</button>
             </div>
         </div>
     )
