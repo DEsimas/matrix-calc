@@ -74,3 +74,15 @@ export function multiply(a, b) {
     }
     return product;
 }
+
+export function add(m1, m2) {
+    const m = []
+    for (let i = 0; i < m1.length; i++) {
+        const v = []
+        for (let j = 0; j < m1[i].length; j++) {
+            v.push(m1[i][j] + m2[i][j])
+        }
+        m.push(v)
+    }
+    return m
+}

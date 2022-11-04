@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
+import { v1 } from 'uuid'
+
+import Addition from './Addition'
 import Transpose from './Transpose'
 import Multiplication from './Multiplication'
+
 import './Table.css'
-import { v1 } from 'uuid'
 
 const Table = (props) => {
     const [collapsed, setCollapsed] = useState(false)
@@ -26,6 +29,7 @@ const Table = (props) => {
             <div className={'list ' + (collapsed ? 'hidden' : '')}>
                 <button onClick={() => props.addElement((<Transpose key={v1()} />))}>Transpose</button>
                 <button onClick={() => props.addElement((<Multiplication key={v1()} />))}>Multiplication</button>
+                <button onClick={() => props.addElement((<Addition key={v1()} />))}>Addition</button>
             </div>
         </div>
     )
