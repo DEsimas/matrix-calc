@@ -56,6 +56,9 @@ const Table = (props) => {
                 <button onClick={
                     () => props.addElement((<MatrixToNumber operation={Matrix.determinant} span={'det'} title={'Determinant'} key={v1()} />))
                 }>Determinant</button>
+                <button onClick={
+                    () => props.addElement((<SingleMatrix operation={Matrix.adjugate} span={''} title={'Adjugate'} key={v1()} />))
+                }>Adjugate</button>
             </div>
         </div>
     )
