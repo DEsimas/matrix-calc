@@ -1,4 +1,8 @@
+import { isMatrix } from "./../../matrix/validation/isMatrix"
+
 export function subtract(matrix1, matrix2) {
+    if (!isMatrix(matrix1) || !isMatrix(matrix2)) throw Error('Matrix have to be passed')
+    if (!(matrix1.length == matrix2.length && matrix1[0].length == matrix1[0].length)) throw Error('Size of matrices have to be same')
     const matrix = []
     for (let i = 0; i < matrix1.length; i++) {
         const vecotr = []
