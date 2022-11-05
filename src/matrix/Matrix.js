@@ -9,6 +9,10 @@ import { addZeroColumn } from "./resize/addZeroColumn"
 import { addZeroRow } from "./resize/addZeroRow"
 import { removeLastColumn } from "./resize/removeLastColumn"
 import { removeLastRow } from "./resize/removeLastRow"
+import { isMatrix } from "./validation/isMatrix"
+import { isMultiplicatable } from "./validation/isMultiplicatable"
+import { isNumber } from "./validation/isNumber"
+import { isSquareMatrix } from "./validation/isSquareMatrix"
 
 export class Matrix {
     static getIdentityMatrix = getIdentityMatrix
@@ -22,4 +26,8 @@ export class Matrix {
     static addZeroRow = addZeroRow
     static removeLastColumn = removeLastColumn
     static removeLastRow = removeLastRow
+    static isMatrix = isMatrix
+    static isMultiplicatable = isMultiplicatable
+    static isNumber = isNumber
+    static isSquareMatrix = isSquareMatrix
 }
