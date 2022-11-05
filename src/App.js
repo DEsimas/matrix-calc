@@ -4,11 +4,12 @@ import './App.css'
 import Table from './components/Table'
 import MatrixNumber from './components/windows/MatrixNumber'
 import { Matrix } from './matrix/Matrix'
+import DoubleMatrix from './components/windows/DoubleMatrix'
 
 const App = () => {
     return (
         <>
-            <MatrixNumber title={'Divide'} operation={Matrix.divideByNumber} span={'/'} />
+            <DoubleMatrix title={'Add'} operation={Matrix.add} span={'+'} />
         </>
     )
 }
