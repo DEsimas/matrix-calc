@@ -1,0 +1,25 @@
+.background {
+    background-color: rgb(174, 174, 174);
+    padding: 10px;
+    display: inline-block;
+    position: absolute;
+    border: black 2px solid;
+    border-radius: 15px;
+}
+
+.background-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.background-header h2 {
+    font-size: 34px;
+    margin: 5px 0;
+}
+
+.background-header span {
+    font-size: 34px;
+    text-align: center;
+    color: red;
+    cursor: pointer;
+}

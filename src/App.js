@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
+
+import Table from './components/Table/Table'
+
 import './normalize.css'
 import './App.css'
-import Table from './components/Table'
 
 const App = () => {
     const [elements, setElements] = useState([])

@@ -1,0 +1,9 @@
+.double_matrix {
+    display: flex;
+    align-items: center;
+}
+
+.double_matrix span {
+    font-size: 32px;
+    margin: 10px;
+}

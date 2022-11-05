@@ -1,6 +1,9 @@
 import { getIdentityMatrix } from "./generate/getIdentityMatrix"
 import { getZeroMatrix } from "./generate/getZeroMatrix"
 import { getZeroVector } from "./generate/getZeroVector"
+import { addNumber } from "./number/addNumber"
+import { multiplyByNumber } from "./number/multiplyByNumber"
+import { subtractNumber } from "./number/subtractNumber"
 import { add } from "./matrix/add"
 import { adjugate } from "./matrix/adjugate"
 import { cofactor } from "./matrix/cofactor"
@@ -9,6 +12,7 @@ import { invert } from "./matrix/invert"
 import { multiply } from "./matrix/multiply"
 import { subtract } from "./matrix/subtract"
 import { transpose } from "./matrix/transpose"
+import { divideByNumber } from "./number/divideByNumber"
 import { addZeroColumn } from "./resize/addZeroColumn"
 import { addZeroRow } from "./resize/addZeroRow"
 import { removeLastColumn } from "./resize/removeLastColumn"
@@ -30,6 +34,10 @@ export class Matrix {
     static multiply = multiply
     static subtract = subtract
     static transpose = transpose
+    static addNumber = addNumber
+    static divideByNumber = divideByNumber
+    static multiplyByNumber = multiplyByNumber
+    static subtractNumber = subtractNumber
     static addZeroColumn = addZeroColumn
     static addZeroRow = addZeroRow
     static removeLastColumn = removeLastColumn
