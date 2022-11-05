@@ -1,0 +1,13 @@
+.single_matrix {
+    display: flex;
+    align-items: center;
+}
+
+.single_matrix span {
+    font-size: 32px;
+    margin: 10px;
+}
+
+.single_matrix-left {
+    display: flex;
+}

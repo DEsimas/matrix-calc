@@ -45,35 +45,35 @@ const Input = (props) => {
 
     function onValueChange(value, row, column) {
         matrix[row][column] = value
-        if (props.onChange) props.onChange(matrix)
+        if (props.onChange) props.onChange([...matrix])
     }
 
     function decreaseColumns(e) {
         e.stopPropagation()
         matrix = Matrix.removeLastColumn(matrix)
-        if (typeof props.onChange == 'function') props.onChange(matrix)
-        if (typeof props.onDecreaseColumns == 'function') props.onDecreaseColumns(matrix)
+        if (typeof props.onChange == 'function') props.onChange([...matrix])
+        if (typeof props.onDecreaseColumns == 'function') props.onDecreaseColumns([...matrix])
     }
 
     function increaseColumns(e) {
         e.stopPropagation()
         matrix = Matrix.addZeroColumn(matrix)
-        if (typeof props.onChange == 'function') props.onChange(matrix)
-        if (typeof props.onIncreaseColumns == 'function') props.onIncreaseColumns(matrix)
+        if (typeof props.onChange == 'function') props.onChange([...matrix])
+        if (typeof props.onIncreaseColumns == 'function') props.onIncreaseColumns([...matrix])
     }
 
     function decreaseRows(e) {
         e.stopPropagation()
         matrix = Matrix.removeLastRow(matrix)
-        if (typeof props.onChange == 'function') props.onChange(matrix)
-        if (typeof props.onDecreaseRows == 'function') props.onDecreaseRows(matrix)
+        if (typeof props.onChange == 'function') props.onChange([...matrix])
+        if (typeof props.onDecreaseRows == 'function') props.onDecreaseRows([...matrix])
     }
 
     function increaseRows(e) {
         e.stopPropagation()
         matrix = Matrix.addZeroRow(matrix)
-        if (typeof props.onChange == 'function') props.onChange(matrix)
-        if (typeof props.onIncreaseRows == 'function') props.onIncreaseRows(matrix)
+        if (typeof props.onChange == 'function') props.onChange([...matrix])
+        if (typeof props.onIncreaseRows == 'function') props.onIncreaseRows([...matrix])
     }
 
     return (

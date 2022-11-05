@@ -3,11 +3,12 @@ import './normalize.css'
 import './App.css'
 import Table from './components/Table'
 import SingleMatrix from './components/windows/SingleMatrix'
+import { Matrix } from './matrix/Matrix'
 
 const App = () => {
     return (
         <>
-            <SingleMatrix />
+            <SingleMatrix operation={Matrix.transpose} span={'T'} />
         </>
     )
 }
