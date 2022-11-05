@@ -8,7 +8,7 @@ import { Matrix } from './matrix/Matrix'
 const App = () => {
     return (
         <>
-            <SingleMatrix operation={Matrix.transpose} span={'T'} />
+            <SingleMatrix title={'Transpose'} operation={Matrix.transpose} span={'T'} />
         </>
     )
 }

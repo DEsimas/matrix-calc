@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 
 import { Matrix } from '../../matrix/Matrix'
 import Input from '../input/Input'
+import Background from './Background'
 
 import './SingleMatrix.css'
 
@@ -10,26 +11,27 @@ const SingleMatrix = (props) => {
     const [result, setResult] = useState(props.operation(matrix))
 
     useEffect(() => {
-        console.log(matrix)
         setResult(props.operation(matrix))
     }, [matrix])
 
     return (
-        <div className='single_matrix'>
-            <div className='single_matrix-left'>
+        <Background title={props.title}>
+            <div className='single_matrix'>
+                <div className='single_matrix-left'>
+                    <Input
+                        value={matrix}
+                        onChange={(matrix) => setMatrix(matrix)}
+                    />
+                    <span className='single_matrix-left-span'>{props.span}</span>
+                </div>
+                <span>=</span>
                 <Input
-                    value={matrix}
-                    onChange={(matrix) => setMatrix(matrix)}
+                    disabled={true}
+                    value={result}
+                    onChange={(result) => setResult(result)}
                 />
-                <span className='single_matrix-left-span'>{props.span}</span>
             </div>
-            <span>=</span>
-            <Input
-                disabled={true}
-                value={result}
-                onChange={(result) => setResult(result)}
-            />
-        </div>
+        </Background>
     )
 }
 
