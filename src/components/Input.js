@@ -31,7 +31,7 @@ const Input = (props) => {
     }
 
     function onValueChange(value, row, column) {
-        matrix = replace(matrix, row, column, value)
+        matrix[row][column] = value
         if (props.onChange) props.onChange(matrix)
     }
 
