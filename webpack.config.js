@@ -20,7 +20,7 @@ module.exports = {
         extensions: ['.js', '.jsx', '.json']
     },
     plugins: [new HtmlWebpackPlugin({
-        favicon: './src/favicon.ico',
+        favicon: './assets/favicon.ico',
         template: './index.html'
     })],
     module: {
