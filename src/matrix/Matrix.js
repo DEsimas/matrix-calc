@@ -3,30 +3,6 @@ export function replace(matrix, row, column, value) {
     return [...matrix]
 }
 
-export function addZeroColumn(matrix) {
-    for (let i = 0; i < matrix.length; i++) {
-        matrix[i].push(0)
-    }
-    return [...matrix]
-}
-
-export function removeLastColumn(matrix) {
-    for (let i = 0; i < matrix.length; i++) {
-        matrix[i].pop()
-    }
-    return [...matrix]
-}
-
-export function addZeroRow(matrix) {
-    matrix.push(getZeroVector(matrix[0].length))
-    return [...matrix]
-}
-
-export function removeLastRow(matrix) {
-    matrix.pop()
-    return [...matrix]
-}
-
 export function transpose(matrix) {
     let [row] = matrix
     return row.map((value, column) => matrix.map(row => row[column]))
