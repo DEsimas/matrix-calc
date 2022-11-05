@@ -2,6 +2,10 @@ import { getIdentityMatrix } from "./generate/getIdentityMatrix"
 import { getZeroMatrix } from "./generate/getZeroMatrix"
 import { getZeroVector } from "./generate/getZeroVector"
 import { add } from "./matrix/add"
+import { adjugate } from "./matrix/adjugate"
+import { cofactor } from "./matrix/cofactor"
+import { determinant } from "./matrix/determinant"
+import { invert } from "./matrix/invert"
 import { multiply } from "./matrix/multiply"
 import { subtract } from "./matrix/subtract"
 import { transpose } from "./matrix/transpose"
@@ -19,6 +23,10 @@ export class Matrix {
     static getZeroMatrix = getZeroMatrix
     static getZeroVector = getZeroVector
     static add = add
+    static adjugate = adjugate
+    static cofactor = cofactor
+    static determinant = determinant
+    static invert = invert
     static multiply = multiply
     static subtract = subtract
     static transpose = transpose
