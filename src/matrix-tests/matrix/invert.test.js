@@ -4,6 +4,10 @@ test('undefined matrix', () => {
     expect(() => invert()).toThrow('Matrix have to be passed')
 })
 
+test('determinant 0', () => {
+    expect(() => invert([[0, 0], [0, 0]])).toThrow('Determinant can\'t be 0')
+})
+
 test('invert 1', () => {
     expect(invert([[3, 4], [5, 7]])).toStrictEqual([[7, -4], [-5, 3]])
 })

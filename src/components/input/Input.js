@@ -76,6 +76,10 @@ const Input = (props) => {
         if (typeof props.onIncreaseRows == 'function') props.onIncreaseRows([...matrix])
     }
 
+    if (typeof props.value == 'string') return (
+        <div className='matrix-input'><span className='matrix-input-error'>{props.value}</span></div>
+    )
+
     return (
         <div className='matrix-input'>
             <div className='matrix-input-control-column'>

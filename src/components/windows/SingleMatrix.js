@@ -1,17 +1,21 @@
 import React, { useEffect, useState } from 'react'
 
-import { Matrix } from '../../matrix/Matrix'
 import Input from '../input/Input'
 import Background from './Background'
+import { Matrix } from '../../matrix/Matrix'
 
 import './SingleMatrix.css'
 
 const SingleMatrix = (props) => {
     const [matrix, setMatrix] = useState(Matrix.getZeroMatrix(3, 3))
-    const [result, setResult] = useState(props.operation(matrix))
+    const [result, setResult] = useState(Matrix.getZeroMatrix(3, 3))
 
     useEffect(() => {
-        setResult(props.operation(matrix))
+        try {
+            setResult(props.operation(matrix))
+        } catch (e) {
+            setResult(e.message)
+        }
     }, [matrix])
 
     return (
