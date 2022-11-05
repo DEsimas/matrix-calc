@@ -2,13 +2,13 @@ import React, { useState } from 'react'
 import './normalize.css'
 import './App.css'
 import Table from './components/Table'
-import SingleMatrix from './components/windows/SingleMatrix'
+import MatrixNumber from './components/windows/MatrixNumber'
 import { Matrix } from './matrix/Matrix'
 
 const App = () => {
     return (
         <>
-            <SingleMatrix title={'Transpose'} operation={Matrix.transpose} span={'T'} />
+            <MatrixNumber title={'Divide'} operation={Matrix.divideByNumber} span={'/'} />
         </>
     )
 }
