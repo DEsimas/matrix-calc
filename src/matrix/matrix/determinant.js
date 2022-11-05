@@ -1,4 +1,9 @@
+import { isMatrix } from "../validation/isMatrix"
+import { isSquareMatrix } from "../validation/isSquareMatrix"
+
 export function determinant(m) {
+    if (!isMatrix(m)) throw Error('Matrix have to be passed')
+    if (!isSquareMatrix(m)) throw Error('Square matrix have to be passed')
     return m.length == 1 ?
         m[0][0] :
         m.length == 2 ?
