@@ -45,7 +45,7 @@ const Table = (props) => {
                     () => props.addElement((<MatrixNumber operation={Matrix.multiplyByNumber} span={'×'} title={'Multyply by number'} key={v1()} />))
                 }>Multyply by number</button>
                 <button onClick={
-                    () => props.addElement((<MatrixNumber operation={Matrix.divideByNumber} span={'×'} title={'Divide by number'} key={v1()} />))
+                    () => props.addElement((<MatrixNumber operation={Matrix.divideByNumber} span={'/'} title={'Divide by number'} key={v1()} />))
                 }>Divide by number</button>
                 <button onClick={
                     () => props.addElement((<SingleMatrix operation={Matrix.transpose} span={'T'} title={'Transpose'} key={v1()} />))

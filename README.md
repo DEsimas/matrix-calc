@@ -22,7 +22,7 @@ This is webpack react application which implements different matrix operations w
 
 # Preview
 
-In progress...
+<img src="./assets/preview.png" alt="preview">
 
 # Tecnologies
 
