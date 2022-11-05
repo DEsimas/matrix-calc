@@ -1,23 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+html {
+    font-family: 'Roboto', sans-serif;
+}
+
 .hidden {
     display: none !important;
-}
-
-.header {
-    font-size: 32px;
-    margin: 0;
-    margin-bottom: 5px;
-}
-
-.top {
-    display: flex;
-    justify-content: space-between;
-}
-
-.exit {
-    background-color: transparent;
-    border: none;
-    color: red;
-    font-size: 24px;
-    cursor: pointer;
-    padding: 0;
 }
