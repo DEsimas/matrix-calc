@@ -27,7 +27,16 @@ const MatrixNumber = (props) => {
                     onChange={(matrix) => setMatrix(matrix)}
                 />
                 <span className='matrix_number-span'>{props.span}</span>
-                <input className='matrix_number-input' type={'number'} value={number} onChange={(e) => setNumber(e.target.valueAsNumber)} />
+                <input
+                    className='matrix_number-input'
+                    type={'number'}
+                    value={number}
+                    onMouseDown={(e) => e.stopPropagation()}
+                    onChange={(e) => {
+                        e.stopPropagation()
+                        setNumber(e.target.valueAsNumber)
+                    }}
+                />
                 <span>=</span>
                 <Input
                     disabled={true}

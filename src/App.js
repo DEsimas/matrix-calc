@@ -1,15 +1,24 @@
 import React, { useState } from 'react'
+
+import Table from './components/Table/Table'
+
 import './normalize.css'
 import './App.css'
-import Table from './components/Table'
-import MatrixNumber from './components/windows/MatrixNumber'
-import { Matrix } from './matrix/Matrix'
-import DoubleMatrix from './components/windows/DoubleMatrix'
 
 const App = () => {
+    const [elements, setElements] = useState([])
+
+    const addElement = (element) => {
+        elements.push(element)
+        setElements([...elements])
+    }
+
     return (
         <>
-            <DoubleMatrix title={'Add'} operation={Matrix.add} span={'+'} />
+            <Table addElement={addElement} />
+            <div className='elements'>
+                {elements.map(el => (el))}
+            </div>
         </>
     )
 }
