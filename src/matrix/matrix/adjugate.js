@@ -12,7 +12,8 @@ export function adjugate(matrix) {
     for (let i = 0; i < matrix.length; i++) {
         const vector = []
         for (let j = 0; j < matrix[i].length; j++) {
-            vector.push(determinant(cofactor(matrix, i, j)) * Math.pow(-1, i + j))
+            const el = determinant(cofactor(matrix, i, j)) * Math.pow(-1, i + j)
+            vector.push(el == 0 ? 0 : el)
         }
         res.push(vector)
     }
