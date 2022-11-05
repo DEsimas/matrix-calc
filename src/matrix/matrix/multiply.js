@@ -1,13 +1,12 @@
+import { isMatrix } from "../validation/isMatrix";
+import { isMultiplicatable } from "../validation/isMultiplicatable";
+
 export function multiply(a, b) {
-    if (!Array.isArray(a) || !Array.isArray(b) || !a.length || !b.length) {
-        throw new Error('arguments should be in 2-dimensional array format');
-    }
+    if (!isMatrix(a) || !isMatrix(b)) throw Error('Arguments have to be matrices')
+    if (!isMultiplicatable(a, b)) throw Error('Number of columns in the first matrix should be the same as the number of rows in the second')
     let x = a.length,
         z = a[0].length,
         y = b[0].length;
-    if (b.length !== z) {
-        throw new Error('number of columns in the first matrix should bethe same as the number of rows in the second');
-    }
     let productRow = Array.apply(null, new Array(y)).map(Number.prototype.valueOf, 0);
     let product = new Array(x);
     for (let p = 0; p < x; p++) {

@@ -31,3 +31,7 @@ test('multiplicatable matrices 2', () => {
 test('multiplicatable matrices 3', () => {
     expect(isMultiplicatable([[1, 2], [4, 5]], [[1, 2], [3, 4]])).toBe(true)
 })
+
+test('multiplicatable matrices 4', () => {
+    expect(isMultiplicatable([[9]], [[8, 6, 5, 2]])).toBe(true)
+})
