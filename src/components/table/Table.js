@@ -7,6 +7,7 @@ import MatrixNumber from '../windows/MatrixNumber'
 
 import './Table.css'
 import SingleMatrix from '../windows/SingleMatrix'
+import MatrixToNumber from '../windows/MatrixToNumber'
 
 const Table = (props) => {
     const [collapsed, setCollapsed] = useState(false)
@@ -52,6 +53,9 @@ const Table = (props) => {
                 <button onClick={
                     () => props.addElement((<SingleMatrix operation={Matrix.invert} span={'-1'} title={'Invert'} key={v1()} />))
                 }>Invert</button>
+                <button onClick={
+                    () => props.addElement((<MatrixToNumber operation={Matrix.determinant} span={'det'} title={'Determinant'} key={v1()} />))
+                }>Determinant</button>
             </div>
         </div>
     )

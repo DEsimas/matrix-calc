@@ -16,6 +16,7 @@ This is webpack react application which implements different matrix operations w
     <li>Subtract number from matrix</li>
     <li>Multiply matrix by number</li>
     <li>Divide matrix by number</li>
+    <li>Get determinant</li>
 </ul>
 
 # Preview
