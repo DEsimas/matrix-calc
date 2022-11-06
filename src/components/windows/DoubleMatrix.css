@@ -5,5 +5,20 @@
 
 .double_matrix span {
     font-size: 32px;
+    margin: 15px;
+}
+
+.double_matrix-mid {
+    display: flex;
+    flex-direction: column;
+}
+
+.double_matrix-mid svg {
+    position: absolute;
     margin: 10px;
+    cursor: pointer;
+    top: 60px;
+    border: solid 1px black;
+    border-radius: 8px;
+    padding: 1px;
 }
