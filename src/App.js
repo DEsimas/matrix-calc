@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import Table from './components/Table/Table'
 
@@ -7,11 +7,29 @@ import './App.css'
 
 const App = () => {
     const [elements, setElements] = useState([])
+    const [width, setWidth] = useState(window.innerWidth);
 
-    const addElement = (element) => {
+    function addElement(element) {
         elements.push(element)
         setElements([...elements])
     }
+
+    function handleWindowSizeChange() {
+        setWidth(window.innerWidth);
+    }
+
+    useEffect(() => {
+        window.addEventListener('resize', handleWindowSizeChange);
+        return () => {
+            window.removeEventListener('resize', handleWindowSizeChange);
+        }
+    }, []);
+
+    if (width <= 768) return (
+        <div className='mobile'>
+            This application doesn't have a mobile version.
+        </div>
+    )
 
     return (
         <>
