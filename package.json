@@ -5,10 +5,11 @@
   "main": "./index.js",
   "homepage": "https://DEsimas.github.io/Matrix-calc/",
   "scripts": {
-    "start:dev": "npm run build && npm run start",
+    "start:dev": "npm run build:dev && npm run start",
     "start": "webpack-dev-server .",
-    "build": "webpack .",
-    "predeploy": "npm run build",
+    "build:dev": "webpack --config ./webpack.config",
+    "build:prod": "webpack --config ./webpack.production.config",
+    "predeploy": "npm run build:prod",
     "deploy": "gh-pages -d public",
     "test": "jest"
   },
