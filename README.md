@@ -18,6 +18,7 @@ This is webpack react application which implements different matrix operations w
     <li>Divide matrix by number</li>
     <li>Get determinant</li>
     <li>Adjugate matrix</li>
+    <li>Test coverage for all matrix operations</li>
 </ul>
 
 # Preview
