@@ -21,6 +21,7 @@ const Table = (props) => {
             <div onClick={() => toggleCollapsed()} className='table-header'>
                 <h2>Operations</h2>
                 <img
+                    alt={collapsed ? "show" : "hide"}
                     style={{
                         transform: collapsed ? 'rotate(180deg)' : 'rotate(90deg)',
                         transition: 'transform 150ms ease',
