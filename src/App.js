@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-import Table from './components/Table/Table'
+import Table from './components/Table/Table.js'
 
 import './normalize.css'
 import './App.css'
