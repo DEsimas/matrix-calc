@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Matrix } from './../../matrix/Matrix'
+import { Matrix } from './../../matrix/Matrix.js'
 
 import './Input.css'
 /*Props

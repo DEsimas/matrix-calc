@@ -1,13 +1,13 @@
 import { v1 } from 'uuid'
 import React, { useState } from 'react'
 
-import { Matrix } from './../../matrix/Matrix'
-import DoubleMatrix from '../windows/DoubleMatrix'
-import MatrixNumber from '../windows/MatrixNumber'
+import { Matrix } from './../../matrix/Matrix.js'
+import DoubleMatrix from '../windows/DoubleMatrix.js'
+import MatrixNumber from '../windows/MatrixNumber.js'
 
 import './Table.css'
-import SingleMatrix from '../windows/SingleMatrix'
-import MatrixToNumber from '../windows/MatrixToNumber'
+import SingleMatrix from '../windows/SingleMatrix.js'
+import MatrixToNumber from '../windows/MatrixToNumber.js'
 
 const Table = (props) => {
     const [collapsed, setCollapsed] = useState(false)
